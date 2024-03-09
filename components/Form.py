@@ -23,7 +23,7 @@ class Form:
 
         self.start = Entry(frame, 'Введите начальное значение', 3)
         self.end = Entry(frame, 'Введите конечное значение', 4)
-        self.step = Entry(frame, 'Введите значение шага', 5)
+        self.step = Entry(frame, 'Введите значение шага', 5, strict_positive=True)
         self.show = CheckBox(frame, 'Показать график', 6)
         self.options = ComboBox(frame, 'Действия с графиком', 7, ["Показать", "Сохранить в файл", "Показать и сохранить", "Игнорировать"])
 
@@ -47,6 +47,10 @@ class Form:
         for field in [self.start, self.end, self.step]:
             if not field.valid:
                 return False
+
+        if float(self.start.variable.get()) > float(self.end.variable.get()):
+            return False
+
         return True
 
 
