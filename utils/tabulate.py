@@ -18,8 +18,8 @@ def get_plot(start, end, delta, table):
     ax.plot(x1, y1, label='f(x)', color='red')
 
     # ax.set_aspect('equal', adjustable='box')
-    ax.set_xlim(-3, 3)
-    ax.set_ylim(-3, 3)
+    ax.set_xlim(start, end)
+    ax.set_ylim(start, end)
 
     ax.set_xlabel("X")
     ax.set_ylabel("Y")

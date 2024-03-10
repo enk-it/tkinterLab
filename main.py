@@ -15,12 +15,12 @@ def main(values):
     figure, ax = get_plot(start, end, delta, table)
 
     if save_table:
-        pass
+        with open('table.txt', 'w') as file:
+            file.write(table_str)
     if option in ["Показать и сохранить", "Сохранить в файл"]:
-        pass
+        figure.savefig('Graph')
 
-    if show_table or option in ["Показать", "Показать и сохранить"]:
-        Output(table_str, figure, show_table, option in ["Показать", "Показать и сохранить"])
+    Output(table_str, figure, show_table, option in ["Показать", "Показать и сохранить"])
 
 
 Form(main)
