@@ -1,5 +1,4 @@
 import tkinter as tk
-from tkinter import ttk
 
 
 class Text:
@@ -8,4 +7,3 @@ class Text:
         self.text_var.set(text)
         label = tk.Label(frame, textvariable=self.text_var)
         label.grid(row=row, column=1)
-

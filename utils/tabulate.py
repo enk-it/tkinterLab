@@ -17,7 +17,6 @@ def get_plot(start, end, delta, table):
     figure.suptitle(title, fontsize=14, fontweight='bold')
     ax.plot(x1, y1, label='f(x)', color='red')
 
-    # ax.set_aspect('equal', adjustable='box')
     ax.set_xlim(start, end)
     ax.set_ylim(start, end)
 

@@ -1,7 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
 from tkinter.scrolledtext import ScrolledText
-
 from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
                                                NavigationToolbar2Tk)
 
@@ -13,7 +11,6 @@ class Output:
         self.window = tk.Tk()
         self.window.title("Вывод результата табуляции")
         self.window.geometry("1024x800")
-        self.window.attributes('-type', 'utility ')
 
         if show_plot:
             self.show_plot(figure)
@@ -37,4 +34,3 @@ class Output:
         toolbar.update()
         canvas.get_tk_widget().pack()
 
-# Output()

@@ -12,8 +12,6 @@ class Form:
         window = tk.Tk()
         self.text_error = ''
 
-        window.attributes('-type', 'utility ')
-
         window.title("Табулирование функций tkinter")
         window.geometry("800x600")
 

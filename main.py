@@ -11,7 +11,7 @@ def main(values):
     table_str = table_to_str(table, maxlen)
 
     show_table, save_table, option = values["show_table"], values["save_table"], values["option"]
-
+    show_plot = option in ["Показать", "Показать и сохранить"]
     figure, ax = get_plot(start, end, delta, table)
 
     if save_table:
@@ -20,7 +20,7 @@ def main(values):
     if option in ["Показать и сохранить", "Сохранить в файл"]:
         figure.savefig('Graph')
 
-    Output(table_str, figure, show_table, option in ["Показать", "Показать и сохранить"])
+    Output(table_str, figure, show_table, show_plot)
 
 
 Form(main)
