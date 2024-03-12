@@ -6,11 +6,12 @@ from matplotlib.backends.backend_tkagg import (FigureCanvasTkAgg,
 
 class Output:
     def __init__(self, table_str, figure, show_table, show_plot):
+
         if not (show_plot or show_table):
             return
         self.window = tk.Tk()
         self.window.title("Вывод результата табуляции")
-        self.window.geometry("1024x800")
+        self.window.state('zoomed')
 
         if show_plot:
             self.show_plot(figure)
@@ -29,8 +30,7 @@ class Output:
         canvas = FigureCanvasTkAgg(figure,
                                    master=self.window)
         canvas.draw()
-        toolbar = NavigationToolbar2Tk(canvas,
-                                       self.window)
+        toolbar = NavigationToolbar2Tk(canvas,self.window)
         toolbar.update()
         canvas.get_tk_widget().pack()
 

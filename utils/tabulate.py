@@ -3,7 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def get_plot(start, end, delta, table):
-    title = f"""График функции y = f(x)\n В промежутке от {start} до {end} с шагом {delta}"""
+
+    function = "-x / (x^5 * e^sinx)"
+
+    title = f"""График функции y = {function}\n В промежутке от {start} до {end} с шагом {delta}"""
 
     x1 = []
     y1 = []
@@ -13,7 +16,7 @@ def get_plot(start, end, delta, table):
         x1.append(x)
         y1.append(value)
 
-    figure, ax = plt.subplots(1)
+    figure, ax = plt.subplots()
     figure.suptitle(title, fontsize=14, fontweight='bold')
     ax.plot(x1, y1, label='f(x)', color='red')
 
@@ -24,7 +27,7 @@ def get_plot(start, end, delta, table):
     ax.set_ylabel("Y")
     ax.legend()
     ax.grid()
-    return figure, ax
+    return figure
 
 
 def getMax(list):

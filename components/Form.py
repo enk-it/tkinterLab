@@ -14,15 +14,14 @@ class Form:
 
         window.title("Табулирование функций tkinter")
         window.geometry("800x600")
-
-        label = tk.Label(window, text="Функция y = f(x)")
+        label = tk.Label(window, text="Функция y = -x / (x^5 * e^sinx)")
         label.pack()
 
         frame = tk.Frame(window, padx=10, pady=10)
         frame.pack(expand=True)
 
-        self.start = Entry(frame, 'Введите начальное значение', 3, self.update_error_field)
-        self.end = Entry(frame, 'Введите конечное значение', 4, self.update_error_field)
+        self.start = Entry(frame, 'Введите начальное значение', 3, self.update_error_field, max_len=5)
+        self.end = Entry(frame, 'Введите конечное значение', 4, self.update_error_field, max_len=5)
         self.step = Entry(frame, 'Введите значение шага', 5, self.update_error_field, strict_positive=True)
         self.show_table = CheckBox(frame, 'Показать таблицу', 6)
         self.save_table = CheckBox(frame, 'Сохранить таблицу', 7)

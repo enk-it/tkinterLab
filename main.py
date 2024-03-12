@@ -12,7 +12,7 @@ def main(values):
 
     show_table, save_table, option = values["show_table"], values["save_table"], values["option"]
     show_plot = option in ["Показать", "Показать и сохранить"]
-    figure, ax = get_plot(start, end, delta, table)
+    figure = get_plot(start, end, delta, table)
 
     if save_table:
         with open('table.txt', 'w') as file:
